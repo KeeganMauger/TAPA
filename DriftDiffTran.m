@@ -33,6 +33,7 @@ JBC = 0; % No flow BC by default
 RVbc = 0; % Ground Rightside
 SecondSim = 0;
 
+
 PlotSS = 1;
 PlotFile = 'image.gif';
 PlotCount = 0;
@@ -41,6 +42,7 @@ doPlotImage = 0; % set to 1 to draw the image
 %Simulation = 'PNJctEqBias';
 Simulation = 'GaussianTwoCarRCLinGrad';
 %Simulation = 'GaussianTwoCarRC';
+Simulation = 'GaussianTwoCarRCExpGrad';
 
 
 if strcmp(Simulation,'GaussianTwoCar')
@@ -49,6 +51,8 @@ elseif strcmp(Simulation,'GaussianTwoCarRC')
     eval('SetGaussian2CarParasRCOnly');
 elseif strcmp(Simulation,'GaussianTwoCarRCLinGrad')
     eval('SetGaussian2CarParasRCOnlyLinGrad');
+elseif strcmp(Simulation,'GaussianTwoCarRCExpGrad')
+    eval('SetGaussian2CarParasRCOnlyExpGrad');
 elseif strcmp(Simulation,'GaussianSingle0V')
     eval('SetGaussian1CarParas0V');
 elseif strcmp(Simulation,'GaussianSingle1V')
