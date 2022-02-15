@@ -38,9 +38,9 @@ PlotFile = 'image.gif';
 PlotCount = 0;
 doPlotImage = 0; % set to 1 to draw the image
 
-%Simulation = 'PNJctEqBias';
+Simulation = 'PNJctEqBias';
 %Simulation = 'GaussianTwoCarRCLinGrad';
-Simulation = 'GaussianTwoCarRC';
+%Simulation = 'GaussianTwoCarRC';
 
 
 if strcmp(Simulation,'GaussianTwoCar')
@@ -146,7 +146,7 @@ if doPlotImage
 end
 
 
-% fig2 = figure('Position', [100, 100, 1049, 895]);
+fig2 = figure('Position', [100, 100, 1049, 895]);
 PlotVals(nx,dx,'off',l,TStop,[]);
 
 if doPlotImage
