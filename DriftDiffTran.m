@@ -40,7 +40,7 @@ PlotCount = 0;
 doPlotImage = 0; % set to 1 to draw the image
 
 %Simulation = 'PNJctEqBias';
-Simulation = 'GaussianTwoCarRCLinGrad';
+%Simulation = 'GaussianTwoCarRCLinGrad';
 %Simulation = 'GaussianTwoCarRC';
 Simulation = 'GaussianTwoCarRCExpGrad';
 

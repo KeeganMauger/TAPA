@@ -9,10 +9,9 @@ x =linspace(0,l,nx);
 dx = x(2)-x(1);
 xm = x(1:nx-1) + 0.5*dx;
 
-a = 16;                                 % From 1x10^16
-b = (log(20) + 16*log(10))/(log(10));   % To 20x10^16
+a 
 
-F = logspace(a,b,201);
+F = logspace(1e16,20e16,201);
 FX = gradient(F);
 
 Nd = FX .* 1e6;
