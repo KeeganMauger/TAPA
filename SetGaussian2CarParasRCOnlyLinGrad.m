@@ -9,7 +9,11 @@ x =linspace(0,l,nx);
 dx = x(2)-x(1);
 xm = x(1:nx-1) + 0.5*dx;
 
-Nd = 1e16 * 1e6; % Const. 1/cm3 (100 cm/m)^3
+F = linspace(1e16,20e16,201);
+FX = gradient(F);
+
+Nd = FX .* 1e6;
+%Nd = 1e16 * 1e6; % Const. 1/cm3 (100 cm/m)^3
 NetDoping = ones(1,nx).*Nd; % doping
 
 x0 = l/2;
@@ -28,4 +32,4 @@ PlotYAxis = {[-1e-15 2e-15] [-2e-9 2e-9] [-1.5e-12 1.5e-12]...
     [-1e8 1e8] [-10e-3 10e-3] [0 2e22]};
 
 doPlotImage = 0;
-PlotFile = 'Gau2CarRC.gif';
+PlotFile = 'Gau2CarRCLinGrad.gif';
