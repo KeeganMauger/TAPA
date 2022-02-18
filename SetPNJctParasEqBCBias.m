@@ -9,23 +9,23 @@ x =linspace(0,l,nx);
 dx = x(2)-x(1);
 xm = x(1:nx-1) + 0.5*dx;
 
-F = linspace(1e16,20e16,201);
+% F = linspace(1e16,20e16,201);
 %FX = gradient(F);
 
 ni = x < l/2;
 pi = x >= l/2;
 
-Nd = F .* 1e6;
-%Nd = 4e16 * 1e6; % Const. 1/cm3 (100 cm/m)^3
+% Nd = F .* 1e6;
+Nd = 4e16 * 1e6; % Const. 1/cm3 (100 cm/m)^3
 Na = 1e16 * 1e6;%NetDoping(ni) = Nd(ni);
 
-NetDoping = (x-l/2)*Na*2;
+NetDoping = (-x+l/2)*Nd*2;
 
 % Have a doping gradient, but other code does not run
-
-NetDoping(ni) = Nd;
-NetDoping(pi) = -Na;
-%do plot(NetDoping) to find desired line
+% 
+% NetDoping(ni) = Nd;
+% NetDoping(pi) = -Na;
+% plot(x,NetDoping) % to find desired line
 
 x0 = l/2;
 nw = l/20;
@@ -47,10 +47,10 @@ Wp = (W - Wn);
 LVbc = Phi;
 
 PlotSS = 0;
-PlotYAxis = {[0 Phi+0.1] [0e5 40e5] [-20e2 40e2]...
-    [0e21 2.5e22] [0 1.1e22] [0 20e43]...
-    [-5e33 5e33] [-5e33 5e33] [-0e8 3e8] ...
-    [1e-3 1e8] [-3e6 1e6] [0 2.5e22]};
+% PlotYAxis = {[0 Phi+0.1] [0e5 40e5] [-20e2 40e2]...
+%     [0e21 2.5e22] [0 1.1e22] [0 20e43]...
+%     [-5e33 5e33] [-5e33 5e33] [-0e8 3e8] ...
+%     [1e-3 1e8] [-3e6 1e6] [0 2.5e22]};
 doPlotImage = 0;
 
 SecondSim = 1;
